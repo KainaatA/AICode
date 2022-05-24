@@ -1,0 +1,22 @@
+I wanted to ask if you will be able to do follows for the code I have:
+1. Write code to download the videos from Dropbox (already have code written for downloading pdf files from Dropbox so you can modify that a bit)
+2. Feed those videos as input to different AI modules (Facial Recognition, object detection). Code for all modules is written. You need to give the downloaded videos as input to those module, one to each of it.
+3. Take the screenshot if the AI modules show some indication of cheating. (For example, object detection shows if mobile phone is detected on console, we need to take screenshot and save it with the name of that user to Dropbox)
+4. Save the results of those modules to MongoDB.
+
+A temporary GUI have been setup on these modules for now and they are taking input from live webcam. However, the changes in code should include the downloading of videos from Dropbox and feed one video to each of the code as input. Take screenshot if the result shows any cheating from students end detected and save the results as 'Cheating detected in Cheating Object Detection Module' or so in MongoDB.
+
+It will be much better if we have a call before you start work on it so there is no confusion left at all. Once you start work on it in 2 days, let's have a call before then.
+
+AttendanceProject.py
+mouth_opening_detector.py
+person_and_phone.py
+
+Although we don't need to feed video input to main.py (Plag check module), it stores results in a separate DB. Could you please include the plag score in the feedback as well? (without changing its function of storing in the previous DB as well.)
+
+For test videos, they will be added into Dropbox by tomorrow.
+
+And, the rough schema for db for Feedback will be: StudentName(Get from video file name) + Face Recognition Attendance (Attendance Project Output so time of attendance) + mouth_opening_detector (just one instance if the user opens mouth once to ensure its not an image) + person_and_phone (for this, if mobile phone is detected or multiple persons or if none, it would be great if we can seperate these results though like mobile_phone_detector, multiple_persons_detector, and no_person_detector (using the same script but saving three results))
+For each of these, if no negative results, then enter 'Not Applicable' in DB, if negative results, then enter the result and save the screenshot with the student name into DropBox (into a separate folder)
+
+That's all about I.
