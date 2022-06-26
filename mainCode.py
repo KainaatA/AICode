@@ -81,7 +81,7 @@ if __name__ == "__main__":
         data_list.append(data)
 
     # upload results to mongodb
-    client = MongoClient("mongodb+srv://hamzaali:#hamzaOo0#12@cluster0.rkpc2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    client = MongoClient("DB Link")
     database = client['myFirstDatabase']
     collection = database['feedbacks']
     for data in data_list:
